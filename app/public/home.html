@@ -8,6 +8,41 @@
     <title>Friend Finder</title>
 </head>
 <body>
-    <h1>Friend Finder</h1>
+    <nav>
+        <h1>Friend Finder</h1>
+        <div class="clearfix"></div>
+    </nav>
+    <main>
+        <section id="mainDisplay">
+            <p>Take the survey to find a friend in common!</p>
+            <button class="btn">Survey</button>
+        </section>
+
+
+    </main>
+    <footer>
+        <p>All Rights Reserved. &copy; Copyright 2018 - 20**</p>
+    </footer>
+    <script>
+        
+        getFriends()
+
+        async function getFriends() {
+            const headers = new Headers()
+            headers.append('Content-Type', 'application/json')
+
+            const options = {
+                method: 'GET',
+                headers,
+            }
+            
+            let request = new Request('http://localhost:5000/api/friends', options)
+            let res = await fetch(request)
+            let data = await res.json()
+            console.log(data)
+        }
+        
+
+    </script>
 </body>
 </html>
