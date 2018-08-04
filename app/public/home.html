@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Friend Finder</title>
 </head>
 <body>
@@ -15,16 +16,18 @@
     <main>
         <section id="mainDisplay">
             <p>Take the survey to find a friend in common!</p>
-            <button class="btn">Survey</button>
+            <a class="btn" href='/survey'>Survey</a>
         </section>
+        <section id='friends'>
 
+        </section>
 
     </main>
     <footer>
         <p>All Rights Reserved. &copy; Copyright 2018 - 20**</p>
     </footer>
-    <script>
-        
+    <script defer>
+        let friends = $('#friends')
         getFriends()
 
         async function getFriends() {
@@ -35,13 +38,26 @@
                 method: 'GET',
                 headers,
             }
-            
+
             let request = new Request('http://localhost:5000/api/friends', options)
             let res = await fetch(request)
             let data = await res.json()
             console.log(data)
+            let friend = $('<figure>')
+
+            data.forEach(ea => {
+                console.log(ea)
+                console.log(...ea.scores)
+                friend.append([
+                    $('<img>').attr({ src: ea.photo }),
+                    $('<figcaption>').text(ea.name),
+                            $('<pre>').text(ea.scores.toString())
+                ])
+                friends.append(friend)   
+                         
+            });
         }
-        
+                            
 
     </script>
 </body>
