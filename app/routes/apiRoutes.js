@@ -7,7 +7,7 @@ routes.get('/friends', (req, res) => {
     res.send(JSON.stringify(friends))
 })
 
-routes.post('/survey', (req, res) => {
+routes.post('/friends', (req, res) => {
    let { survey } = req.body
    res.send(JSON.stringify(survey))
 })
