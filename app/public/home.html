@@ -4,60 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Compiled and minified CSS  <Materialize CSS> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
     <title>Friend Finder</title>
 </head>
 <body>
-    <nav>
-        <h1>Friend Finder</h1>
-        <div class="clearfix"></div>
-    </nav>
-    <main>
-        <section id="mainDisplay">
-            <p>Take the survey to find a friend in common!</p>
-            <a class="btn" href='/survey'>Survey</a>
-        </section>
-        <section id='friends'>
-
+	<nav class="grey darken-3">
+		<div class="nav-wrapper">
+			<a href="/" class="brand-logo">Friend Finder</a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="/">Home</a></li>
+			<li><a href="survey">Survey</a></li>
+			<li><a href="api/friends">Friends API</a></li>
+			</ul>
+		</div>
+	</nav>
+    <main class="container">
+		<!-- Main Jumbo Container -->
+        <section id="mainDisplay" class="container grey darken-3">
+			<div class="valign-wrapper center">
+				<h5 class="title">Take the survey to find a friend in common!</h5>
+			</div>		
+			<button class="btn center btn-center" href="survey">Survey</button>
+		</section>
+		<!-- Friends section - Contains all friends from server -->
+        <section id="friends" class="grey darken-3">
+			<h4 class="title">Users</h4>
+			<div class="row">
+				<div class="col s4">
+					<div class="card">
+						<div class="card-image">
+							<img src="http://dreamatico.com/data_images/people/people-2.jpg" alt="250 x 250">
+						</div>
+						<div class="card-content">
+							<p class="card-title center">Ahmed</p>
+							<p>Scores<br>2,3,4,5,3,2,1,1</p>
+						</div>
+					</div>
+				</div>
+			</div>
         </section>
 
     </main>
-    <footer>
+    <footer class="grey darken-3">
+		<p>|&nbsp; 
+		<a href="">Home</a> &nbsp;|&nbsp; 
+		<a href="">Survey</a> &nbsp;|&nbsp; 
+		<a href="">API Friends All</a> &nbsp;|</p>	
         <p>All Rights Reserved. &copy; Copyright 2018 - 20**</p>
-    </footer>
-    <script defer>
-        let friends = $('#friends')
-        getFriends()
-
-        async function getFriends() {
-            const headers = new Headers()
-            headers.append('Content-Type', 'application/json')
-
-            const options = {
-                method: 'GET',
-                headers,
-            }
-
-            let request = new Request('http://localhost:5000/api/friends', options)
-            let res = await fetch(request)
-            let data = await res.json()
-            console.log(data)
-            let friend = $('<figure>')
-
-            data.forEach(ea => {
-                console.log(ea)
-                console.log(...ea.scores)
-                friend.append([
-                    $('<img>').attr({ src: ea.photo }),
-                    $('<figcaption>').text(ea.name),
-                            $('<pre>').text(ea.scores.toString())
-                ])
-                friends.append(friend)   
-                         
-            });
-        }                      
-
+	</footer>
+	
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/home.js" defer>
+        
     </script>
 </body>
 </html>
