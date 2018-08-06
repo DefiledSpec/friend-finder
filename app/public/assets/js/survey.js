@@ -9,14 +9,15 @@ let modalBtn = $('#modalBtn')
 let form = $('#survey')
 
 async function getFriend(obj) {
-	let { name, scores } = obj
+	let { name, photo, scores } = obj
 	scores = scores.map(score => parseInt(score)) // Turns scores to number before sending to backend
 	let headers = new Headers()
 	headers.append('Content-Type', 'application/json')
+	console.log({name, photo, scores})
 	const options = {
 		method: 'POST',
 		headers,
-		body: JSON.stringify({ name, scores })
+		body: JSON.stringify({ name, photo, scores })
 	}
 	let request = new Request('api/friends', options)
 	let res = await fetch(request)
@@ -33,8 +34,9 @@ form.on('submit', (e) => { // 'submit' Event listener for the survey form
 	e.preventDefault()
 	let inputs = form[0]
 	let name = inputs[0].value.trim()
+	let photo = inputs[1].value.trim()
 	let scores = []
-	for(let i = 1; i < inputs.length; i++) {
+	for(let i = 2; i < inputs.length; i++) {
 		if(inputs[i].checked) {
 			scores.push(inputs[i].value)
 		}
@@ -43,7 +45,7 @@ form.on('submit', (e) => { // 'submit' Event listener for the survey form
 		alert('Please fill in all the fields!')
 		return
 	}
-	getFriend({ name, scores }) // Call getFriend() with an object { name: name, scores: scores}
+	getFriend({ name, photo, scores }) // Call getFriend() with an object { name: name, photo: photo, scores: scores}
 })
 
 modalBtn.on('click', (e) => { // Event listener for modal button
