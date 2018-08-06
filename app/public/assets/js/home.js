@@ -24,7 +24,7 @@ function displayFriends(users) {
 				.append($('<img>').attr({ src: user.photo, height: 200 }))
 			let content = $('<div>').addClass('card-content')
 				.append($('<p>').addClass('card-title center').text(user.name))
-				.append($('<p>').text(`Scores:${user.scores}`))
+				// .append($('<p>').text(`Scores:${user.scores}`))
 			let card = $('<div>').addClass('card').append(img).append(content)
 			cards.push($('<div>').addClass('col s3').append(card))
 		})
