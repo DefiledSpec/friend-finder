@@ -1,5 +1,5 @@
 let elem = document.querySelector('#modal1');
-let instance = M.Modal.init(elem);
+let modal = M.Modal.init(elem);
 let modalName = $('#modalName')
 let modalPic = $('#modalPic')
 let modalBtn = $('#modalBtn')
@@ -37,16 +37,13 @@ async function getFriend(obj) {
 	let request = new Request('api/friends', options)
 	let res = await fetch(request)
 	let friend = await res.json()
-	console.log(friend)
-	console.log(instance)
+	console.log(modal)
 	modalName.text(friend.name)
-	console.log(friend.photo)
 	modalPic.attr({ src: friend.photo })
-	console.log(modalName, modalPic)
-	instance.open()
+	modal.open()
 }
 
 modalBtn.on('click', (e) => {
-	instance.close()
+	modal.close()
 	console.log(window.location.pathname = '/')
 })
