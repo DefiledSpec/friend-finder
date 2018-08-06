@@ -21,16 +21,16 @@ function displayFriends(users) {
 	if(users) {
 		users.forEach((user, i) => { // Create the cards for ea user and push them to cards[]
 			let img = $('<div>').addClass('card-image')
-				.append($('<img>').attr({ src: user.photo }))
+				.append($('<img>').attr({ src: user.photo, height: 200 }))
 			let content = $('<div>').addClass('card-content')
 				.append($('<p>').addClass('card-title center').text(user.name))
 				.append($('<p>').text(`Scores:${user.scores}`))
 			let card = $('<div>').addClass('card').append(img).append(content)
-			cards.push($('<div>').addClass('col s4').append(card))
+			cards.push($('<div>').addClass('col s3').append(card))
 		})
 		let row;
 		cards.forEach((card, i) => {
-			if((i % 3) === 0) { // Every mod 3 element 0 included
+			if((i % 4) === 0) { // Every mod 3 element 0 included
 				if(i !== 0) friends.append(row) // Every mod 3 but not the first time
 				friends.append(row)
 				row = $('<div>').addClass('row') // create / clear the row every mod 3
