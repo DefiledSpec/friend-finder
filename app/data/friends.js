@@ -32,7 +32,7 @@ let friends = [
           ]
       },
     {
-        "name":"Ahmed2",
+        "name":"Ahmed3",
         "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
         "scores":[
             5,
@@ -48,7 +48,7 @@ let friends = [
           ]
       },
     {
-        "name":"Ahmed2",
+        "name":"Ahmed4",
         "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
         "scores":[
             5,
@@ -64,7 +64,7 @@ let friends = [
           ]
       },
     {
-        "name":"Ahmed2",
+        "name":"Ahmed5",
         "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
         "scores":[
             5,
@@ -80,7 +80,7 @@ let friends = [
           ]
       },
     {
-        "name":"Ahmed2",
+        "name":"Ahmed6",
         "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
         "scores":[
             5,
