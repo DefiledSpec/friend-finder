@@ -41,6 +41,13 @@ footer > p {
 	margin-bottom: .75em;
 }
 
+#surveyContainer {
+	margin: 3em auto;
+	padding: .25em .75em;
+	border-radius: 5px;
+	border: black 1.2px solid;
+}
+
 /* CSS Classes */
 
 .title {
