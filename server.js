@@ -13,7 +13,7 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(morgan('dev'))
+app.use(morgan('short'))
 
 app.use(express.static(path.join(__dirname, 'app/public/')))
 
