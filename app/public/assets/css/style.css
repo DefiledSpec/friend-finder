@@ -48,6 +48,16 @@ footer > p {
 	border: black 1.2px solid;
 }
 
+#modal1 {
+	width: 350px;
+}
+#modalPic {
+	display: block;
+	height: auto;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
 /* CSS Classes */
 
 .title {
