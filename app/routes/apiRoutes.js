@@ -10,7 +10,7 @@ routes.get('/friends', (req, res) => { // Returns json [] of friend obj
 })
 
 routes.post('/friends', (req, res) => {
-	let { name, scores } = req.body
+	let { name, photo, scores } = req.body
 
 	let userCount = 0
 	let bestScore = 1000 // Start the best score high
@@ -33,7 +33,11 @@ routes.post('/friends', (req, res) => {
 		}
 	}
 	let rand = Math.floor(Math.random() * bestFriends.length)
-	if (bestFriends) res.send(JSON.stringify(bestFriends[rand])) // Pick a best friend (if multiple), res.send()
+	if (bestFriends) {
+		let bestMatch = bestFriends[rand]
+		friends.push({name, photo, scores})
+		res.send(JSON.stringify(bestMatch)) // Pick a best friend (if multiple), res.send()
+	} 
 })
 
 module.exports = routes
