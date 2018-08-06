@@ -57,6 +57,7 @@ footer > p {
 .btn-center {
 	display: block;
 	margin: 1.25em auto;
+	width: max-content;
 }
 
 .clearfix::after { /* CSS helper-class used for clearing floats */
