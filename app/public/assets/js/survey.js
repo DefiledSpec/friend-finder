@@ -9,11 +9,13 @@ let modalBtn = $('#modalBtn')
 let form = $('#survey')
 
 async function getFriend(obj) {
-	let { name, photo, scores } = obj
+	let { name, photo, scores } = obj // Pull out the 'name', 'photo', and 'scores' property from the obj arg
+
 	scores = scores.map(score => parseInt(score)) // Turns scores to number before sending to backend
+
 	let headers = new Headers()
 	headers.append('Content-Type', 'application/json')
-	console.log({name, photo, scores})
+	console.log({ name, photo, scores })
 	const options = {
 		method: 'POST',
 		headers,
