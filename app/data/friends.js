@@ -1,7 +1,7 @@
 let friends = [
     {
         "name":"Ahmed",
-        "photo":"",
+        "photo":"http://dreamatico.com/data_images/people/people-2.jpg",
         "scores":[
             5,
             1,
@@ -14,7 +14,87 @@ let friends = [
             4,
             1
           ]
-      }
+    },
+    {
+        "name":"Ahmed2",
+        "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+    {
+        "name":"Ahmed2",
+        "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+    {
+        "name":"Ahmed2",
+        "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+    {
+        "name":"Ahmed2",
+        "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
+    {
+        "name":"Ahmed2",
+        "photo":"http://dreamatico.com/data_images/people/people-1.jpg",
+        "scores":[
+            5,
+            1,
+            4,
+            4,
+            5,
+            1,
+            2,
+            5,
+            4,
+            1
+          ]
+      },
 ]
 
 module.exports = friends
