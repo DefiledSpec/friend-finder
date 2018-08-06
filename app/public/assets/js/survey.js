@@ -6,6 +6,27 @@ let modalBtn = $('#modalBtn')
 
 let form = $('#survey')
 
+async function getFriend(obj) {
+	let { name, scores } = obj
+	scores = scores.map(score => parseInt(score)) // Turns scores to number before sending to backend
+	let headers = new Headers()
+	headers.append('Content-Type', 'application/json')
+	const options = {
+		method: 'POST',
+		headers,
+		body: JSON.stringify({ name, scores })
+	}
+	let request = new Request('api/friends', options)
+	let res = await fetch(request)
+	let friend = await res.json()
+	// Populate the modal with the 'bestFriends' info
+	modalName.text(friend.name)
+	modalPic.attr({ src: friend.photo })
+	modal.open()
+}
+
+/** Event Listeners */
+
 form.on('submit', (e) => {
 	e.preventDefault()
 	let inputs = form[0]
@@ -23,27 +44,7 @@ form.on('submit', (e) => {
 	getFriend({ name, scores })
 })
 
-async function getFriend(obj) {
-	let { name, scores } = obj
-	scores = scores.map(score => parseInt(score)) // Turns scores to number before sending to backend
-	let headers = new Headers()
-	headers.append('Content-Type', 'application/json')
-	const options = {
-		method: 'POST',
-		headers,
-		body: JSON.stringify({ name, scores })
-	}
-	// console.log(options)
-	let request = new Request('api/friends', options)
-	let res = await fetch(request)
-	let friend = await res.json()
-	console.log(modal)
-	modalName.text(friend.name)
-	modalPic.attr({ src: friend.photo })
-	modal.open()
-}
-
 modalBtn.on('click', (e) => {
 	modal.close()
-	console.log(window.location.pathname = '/')
+	console.log(window.location.pathname = '/') // Redirect user to home 
 })
