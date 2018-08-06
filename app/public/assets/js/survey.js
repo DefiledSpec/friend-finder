@@ -1,3 +1,5 @@
+'use strict'
+
 let elem = document.querySelector('#modal1');
 let modal = M.Modal.init(elem);
 let modalName = $('#modalName')
@@ -27,7 +29,7 @@ async function getFriend(obj) {
 
 /** Event Listeners */
 
-form.on('submit', (e) => {
+form.on('submit', (e) => { // 'submit' Event listener for the survey form
 	e.preventDefault()
 	let inputs = form[0]
 	let name = inputs[0].value.trim()
@@ -41,10 +43,10 @@ form.on('submit', (e) => {
 		alert('Please fill in all the fields!')
 		return
 	}
-	getFriend({ name, scores })
+	getFriend({ name, scores }) // Call getFriend() with an object { name: name, scores: scores}
 })
 
-modalBtn.on('click', (e) => {
+modalBtn.on('click', (e) => { // Event listener for modal button
 	modal.close()
 	console.log(window.location.pathname = '/') // Redirect user to home 
 })
