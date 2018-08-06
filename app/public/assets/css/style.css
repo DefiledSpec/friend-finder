@@ -12,6 +12,10 @@ html, body {
 	padding: 0;
 }
 
+body {
+	background: url(../img/dark-grey-terrazzo.png) repeat repeat;
+}
+
 footer {
 	text-align: center;
 	overflow: hidden;
@@ -19,6 +23,10 @@ footer {
 
 footer > p {
 	margin: .75em auto .25em auto;
+}
+
+input[type="text"] {
+	color: ghostwhite;
 }
 
 /* CSS ID's */
@@ -46,6 +54,7 @@ footer > p {
 	padding: .25em .75em;
 	border-radius: 5px;
 	border: black 1.2px solid;
+	color: ghostwhite;
 }
 
 #modal1 {
