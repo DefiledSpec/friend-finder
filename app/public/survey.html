@@ -22,269 +22,176 @@
 			</ul>
 		</div>
 	</nav>
-	<main id="surveyContainer" class="container grey darken-3">
+	<main class="container">
+		<div id="surveyContainer" class="container grey darken-3">
 		<div class="row">
 			<div class="col s12">
-					<h3>Survey</h3>
+				<h3>Survey</h3>
+				<hr>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col s12">
 
 				<form id="survey" method="POST">
-					<div class="row">
-						<div class="input-field col s6">
-							<label for="name">First Name</label>
-							<input name="name" id="name" type="text" placeholder="John" required />	
+						<div class="row">
+							<div class="input-field col s6">
+								<label for="fName">First Name</label>
+								<input name="fName" id="fName" type="text" value="John" required />	
+							</div>
+							<div class="input-field col s6">
+								<label for="lName">Last Name</label>
+								<input name="lName" id="lName" type="text" value="Doe" required />	
+							</div>
+							<div class="input-field col s6">
+								<label for="photo">Photo Url</label>
+								<input name="photo" id="photo" type="url" value="http://www.google.com/" required />	
+							</div>
 						</div>
-						<div class="input-field col s6">
-							<label for="photo">Photo Url</label>
-							<input name="photo" id="photo" type="url" placeholder="http://www.google.com/" required />	
-						</div>
-					</div>
+						<!-- Questions (10) -->
+						<div class="row"> 
+							<h6>I believe that criminals should receive help rather than punishment.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-1" id="q1">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I enjoy wild flights of fantasy.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-2" id="q2">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I can't make up my mind.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-3" id="q3">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I value cooperation over competition.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-4" id="q4">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I pay my bills on time.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-5" id="q5">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I feel sympathy for those who are worse off than myself.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-6" id="q6">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I talk to a lot of different people at parties.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-7" id="q7">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I would never cheat on my taxes.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-8" id="q8">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I like to solve complex problems.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-9" id="q9">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
+						
+						<div class="row">
+							<h6>I experience my emotions intensely.</h6>
+							<div class="col s6 input-field">
+								<select class="browser-default" name="question-10" id="q10">
+									<option disabled selected>Please choose an option.</option>
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3 (Agree)</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							</div>
+						</div><br>
 
-					<h6>I believe that criminals should receive help rather than punishment.</h6>
-
-					<label for="q1-1">
-						<input class="with-gap" type="radio" name="q1" id="q1-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q1-2">
-						<input class="with-gap" type="radio" name="q1" id="q1-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q1-3">
-						<input class="with-gap" type="radio" name="q1" id="q1-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q1-4">
-						<input class="with-gap" type="radio" name="q1" id="q1-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q1-5">
-						<input class="with-gap" type="radio" name="q1" id="q1-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I enjoy wild flights of fantasy.</h6>
-
-					<label for="q2-1">
-						<input class="with-gap" type="radio" name="q2" id="q2-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q2-2">
-						<input class="with-gap" type="radio" name="q2" id="q2-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q2-3">
-						<input class="with-gap" type="radio" name="q2" id="q2-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q2-4">
-						<input class="with-gap" type="radio" name="q2" id="q2-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q2-5">
-						<input class="with-gap" type="radio" name="q2" id="q2-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I can't make up my mind.</h6>
-
-					<label for="q3-1">
-						<input class="with-gap" type="radio" name="q3" id="q3-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q3-2">
-						<input class="with-gap" type="radio" name="q3" id="q3-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q3-3">
-						<input class="with-gap" type="radio" name="q3" id="q3-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q3-4">
-						<input class="with-gap" type="radio" name="q3" id="q3-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q3-5">
-						<input class="with-gap" type="radio" name="q3" id="q3-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I value cooperation over competition.</h6>
-
-					<label for="q4-1">
-						<input class="with-gap" type="radio" name="q4" id="q4-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q4-2">
-						<input class="with-gap" type="radio" name="q4" id="q4-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q4-3">
-						<input class="with-gap" type="radio" name="q4" id="q4-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q4-4">
-						<input class="with-gap" type="radio" name="q4" id="q4-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q4-5">
-						<input class="with-gap" type="radio" name="q4" id="q4-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					
-					<br><br>
-					<h6>I pay my bills on time.</h6>
-
-					<label for="q5-1">
-						<input class="with-gap" type="radio" name="q5" id="q5-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q5-2">
-						<input class="with-gap" type="radio" name="q5" id="q5-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q5-3">
-						<input class="with-gap" type="radio" name="q5" id="q5-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q5-4">
-						<input class="with-gap" type="radio" name="q5" id="q5-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q5-5">
-						<input class="with-gap" type="radio" name="q5" id="q5-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					
-					<br><br>
-					<h6>I feel sympathy for those who are worse off than myself.</h6>
-
-					<label for="q6-1">
-						<input class="with-gap" type="radio" name="q6" id="q6-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q6-2">
-						<input class="with-gap" type="radio" name="q6" id="q6-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q6-3">
-						<input class="with-gap" type="radio" name="q6" id="q6-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q6-4">
-						<input class="with-gap" type="radio" name="q6" id="q6-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q6-5">
-						<input class="with-gap" type="radio" name="q6" id="q6-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I talk to a lot of different people at parties.</h6>
-
-					<label for="q7-1">
-						<input class="with-gap" type="radio" name="q7" id="q7-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q7-2">
-						<input class="with-gap" type="radio" name="q7" id="q7-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q7-3">
-						<input class="with-gap" type="radio" name="q7" id="q7-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q7-4">
-						<input class="with-gap" type="radio" name="q7" id="q7-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q7-5">
-						<input class="with-gap" type="radio" name="q7" id="q7-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I would never cheat on my taxes.</h6>
-
-					<label for="q8-1">
-						<input class="with-gap" type="radio" name="q8" id="q8-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q8-2">
-						<input class="with-gap" type="radio" name="q8" id="q8-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q8-3">
-						<input class="with-gap" type="radio" name="q8" id="q8-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q8-4">
-						<input class="with-gap" type="radio" name="q8" id="q8-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q8-5">
-						<input class="with-gap" type="radio" name="q8" id="q8-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I like to solve complex problems.</h6>
-
-					<label for="q9-1">
-						<input class="with-gap" type="radio" name="q9" id="q9-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q9-2">
-						<input class="with-gap" type="radio" name="q9" id="q9-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q9-3">
-						<input class="with-gap" type="radio" name="q9" id="q9-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q9-4">
-						<input class="with-gap" type="radio" name="q9" id="q9-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q9-5">
-						<input class="with-gap" type="radio" name="q9" id="q9-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-
-					<br><br>
-					<h6>I experience my emotions intensely.</h6>
-
-					<label for="q10-1">
-						<input class="with-gap" type="radio" name="q10" id="q10-1" value="1">
-						<span>1</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q10-2">
-						<input class="with-gap" type="radio" name="q10" id="q10-2" value="2">
-						<span>2</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q10-3">
-						<input class="with-gap" type="radio" name="q10" id="q10-3" value="3" checked>
-						<span>3</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q10-4">
-						<input class="with-gap" type="radio" name="q10" id="q10-4" value="4">
-						<span>4</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<label for="q10-5">
-						<input class="with-gap" type="radio" name="q10" id="q10-5" value="5">
-						<span>5</span>
-					</label>&nbsp;&nbsp;&nbsp;
-					<br><br>
-					<button type="submit" id="submitBtn" class="btn">Submit</button>
-
-				</form>
+						<button type="submit" id="submitBtn" class="btn">Submit</button>
+					</form>
+				</div>
 			</div>
 		</div>
 	</main>
