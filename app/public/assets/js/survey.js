@@ -42,14 +42,14 @@ async function getBestFriend(data) {
 		let data = await fetch(request)
 		return await data.json() // data is json, fetch requries us to call .json()
 	} catch(err) {
-		return (err)
+		return err
 	}
 }
 
 // Opens modal
 function openModal(name, photo) {
-	modalName.text(friend.name)
-	modalPic.attr({ src: friend.photo })
+	modalName.text(name)
+	modalPic.attr({ src: photo })
 	modal.open()
 }
 

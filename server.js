@@ -3,7 +3,7 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
+const logger = require('morgan')
 const path = require('path')
 const htmlRoutes = require('./app/routes/htmlRoutes')
 const apiRoutes = require('./app/routes/apiRoutes')
@@ -13,7 +13,7 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(morgan('short'))
+app.use(logger('short'))
 
 app.use(express.static(path.join(__dirname, 'app/public/')))
 
