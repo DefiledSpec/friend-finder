@@ -22,8 +22,8 @@ async function calcFriend(obj) {
 	let { name, photo, scores } = obj // Pull out the 'name', 'photo', and 'scores' property from the obj arg
 	try {
 		let intScores = scores.map(score => parseInt(score)) // Turns scores to number before sending to backend		
-		let bf = await getBestFriend({name, photo, scores: intScores})
-		openModal(bf) 
+		let best = await getBestFriend({name, photo, scores: intScores})
+		openModal(best.name, best.photo) 
 	} catch(err) {
 		console.dir(err)
 	}
@@ -39,8 +39,8 @@ async function getBestFriend(data) {
 			body: JSON.stringify(data)
 		}
 		let request = new Request('api/friends', options)
-		let data = await fetch(request)
-		return await data.json() // data is json, fetch requries us to call .json()
+		let jsonData = await fetch(request)
+		return await jsonData.json() // fetch requries us to call .json()
 	} catch(err) {
 		return err
 	}
