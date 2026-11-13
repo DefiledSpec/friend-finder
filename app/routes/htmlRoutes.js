@@ -1,16 +1,14 @@
-'use strict'
+import { Router } from 'express'
+import { join } from 'path'
 
-const express = require('express')
-const path = require('path')
+const router = Router()
 
-const routes = express.Router()
-
-routes.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/home.html'))
+router.get('/survey', (req, res) => {
+  res.sendFile(join(import.meta.dirname, '../public/survey.html'))
 })
 
-routes.get('/survey', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/survey.html'))
+router.get('/', (req, res) => {
+  res.sendFile(join(import.meta.dirname, '../public/home.html'))
 })
 
-module.exports = routes
+export default router

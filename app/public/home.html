@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Friend Finder</title>
+
 	<!-- Compiled and minified CSS  <Materialize CSS> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
-	
-    <title>Friend Finder</title>
 </head>
 <body>
-	<nav class="grey darken-3">
-		<div class="nav-wrapper">
-			<a href="/" class="brand-logo">Friend Finder</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="/">Home</a></li>
-			<li><a href="survey">Survey</a></li>
-			<li><a href="api/friends">Friends API</a></li>
-			</ul>
-		</div>
-	</nav>
-    <main class="container">
-		<!-- Main Jumbo Container -->
-        <section id="mainDisplay" class="container grey darken-3">
-			<div class="valign-wrapper center">
-				<h5 class="title">Take the survey to find a friend in common!</h5>
-			</div>		
-			<a class="btn btn-center" href="survey">Survey</a>
-		</section>
-		<!-- Friends section - Contains all friends from server -->
-        <section id="friends" class="grey darken-3">
-			<h4 class="title">Users</h4>
-			
-			<div id="friendsRow" class="row"></div>
+	<header>
+		<nav>
+			<div class="nav-wrapper container">
+				<a href="/" class="brand-logo">Friend <span style="color: #00bfa5;">Finder</span></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/">Home</a></li>
+					<li><a href="/survey">Survey</a></li>
+					<li><a href="/api/friends" target="_blank">Friends API</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
-        </section>
-    </main>
-    <footer class="grey darken-3">
-		<p>|&nbsp; 
-		<a href="/">Home</a> &nbsp;|&nbsp; 
-		<a href="survey">Survey</a> &nbsp;|&nbsp; 
-		<a href="api/friends">API Friends All</a> &nbsp;|</p>	
-        <p>All Rights Reserved. &copy; Copyright 2018 - 2020</p>
+	<main class="container">
+		<!-- Hero Callout -->
+		<section id="mainDisplay">
+			<h4>Find Your Most Compatible Friend</h4>
+			<p style="color: #9ca3af; max-width: 540px; margin: 0 auto 1.5em auto;">
+				Answer 10 quick personality questions and our matching engine will pair you with the person you share
+				the most in common with.
+			</p>
+			<a href="/survey" class="btn waves-effect waves-light btn-accent">
+				Take the Survey
+			</a>
+		</section>
+
+		<!-- Community Members Grid -->
+		<section id="friends">
+			<h4>Community Members</h4>
+			<div id="friendsRow"></div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p style="margin-bottom: 0.4em;">
+				<a href="/">Home</a> &bull;
+				<a href="/survey">Survey</a> &bull;
+				<a href="/api/friends" target="_blank">API Friends List</a>
+			</p>
+			<p style="margin: 0;">All Rights Reserved. &copy; Copyright 2018 &ndash; 2026</p>
+		</div>
 	</footer>
-	
+
 	<!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/home.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/js/home.js" defer></script>
 </body>
+
 </html>

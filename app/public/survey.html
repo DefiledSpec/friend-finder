@@ -1,222 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Survey | Friend Finder</title>
+	<link rel="stylesheet" href="https://cloudflare.com">
+	<link href="https://googleapis.com" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 	<!-- Compiled and minified CSS  <Materialize CSS> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">			
-
-    <title>Survey</title>
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-	<nav class="grey darken-3">
-		<div class="nav-wrapper">
-			<a href="/" class="brand-logo">Friend Finder</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="/">Home</a></li>
-			<li><a href="survey">Survey</a></li>
-			<li><a href="api/friends">Friends API</a></li>
-			</ul>
-		</div>
-	</nav>
+	<header>
+		<nav>
+			<div class="nav-wrapper container">
+				<a href="/" class="brand-logo">Friend <span style="color: #00bfa5;">Finder</span></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/">Home</a></li>
+					<li><a href="/survey">Survey</a></li>
+					<li><a href="/api/friends" target="_blank">Friends API</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
 	<main class="container">
-		<div id="surveyContainer" class="container grey darken-3">
-		<div class="row">
-			<div class="col s12">
-				<h3>Survey</h3>
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12">
+		<section id="surveyContainer">
+			<h4 style="font-weight: 800; margin-top: 0;">Compatibility Survey</h4>
+			<p style="color: #9ca3af; margin-bottom: 2em;">
+				Tell us a bit about yourself and rate each statement from 1 (Strongly Disagree) to 5 (Strongly Agree).
+			</p>
 
-				<form id="survey" method="POST">
-						<div class="row">
-							<div class="input-field col s6">
-								<label for="fName">First Name</label>
-								<input name="fName" id="fName" type="text" placeholder="John" required />	
-							</div>
-							<div class="input-field col s6">
-								<label for="lName">Last Name</label>
-								<input name="lName" id="lName" type="text" placeholder="Doe" required />	
-							</div>
-							<div class="input-field col s6">
-								<label for="photo">Photo Url</label>
-								<input name="photo" id="photo" type="url" placeholder="http://www.google.com/" required />	
-							</div>
+			<form id="survey">
+				<!-- About You Card -->
+				<div class="question-block">
+					<h6 style="color: #00bfa5; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em;">
+						About You</h6>
+					<div class="row" style="margin-bottom: 0;">
+						<div class="input-field col s12 m6">
+							<input id="firstName" type="text" required>
+							<label for="firstName">First Name</label>
 						</div>
-						<!-- Questions (10) -->
-						<div class="row"> 
-							<h6>I believe that criminals should receive help rather than punishment.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-1" id="q1">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I enjoy wild flights of fantasy.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-2" id="q2">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I can't make up my mind.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-3" id="q3">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I value cooperation over competition.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-4" id="q4">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I pay my bills on time.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-5" id="q5">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I feel sympathy for those who are worse off than myself.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-6" id="q6">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I talk to a lot of different people at parties.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-7" id="q7">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I would never cheat on my taxes.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-8" id="q8">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I like to solve complex problems.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-9" id="q9">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-						
-						<div class="row">
-							<h6>I experience my emotions intensely.</h6>
-							<div class="col s6 input-field">
-								<select class="browser-default" name="question-10" id="q10">
-									<option disabled selected>Please choose an option.</option>
-									<option value="1">1 (Strongly Disagree)</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5 (Strongly Agree)</option>
-								</select>
-							</div>
-						</div><br>
-
-						<button type="submit" id="submitBtn" class="btn">Submit</button>
-					</form>
+						<div class="input-field col s12 m6">
+							<input id="lastName" type="text" required>
+							<label for="lastName">Last Name</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="photoUrl" type="url" required>
+							<label for="photoUrl">Photo URL (e.g., https://...)</label>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-	</main>
-	<footer class="grey darken-3">
-		<p>|&nbsp; 
-		<a href="/">Home</a> &nbsp;|&nbsp; 
-		<a href="survey">Survey</a> &nbsp;|&nbsp; 
-		<a href="api/friends">API Friends All</a> &nbsp;|</p>	
-		<p>All Rights Reserved. &copy; Copyright 2018 - 2020</p>
-	</footer>
 
-	<!-- Modal Structure -->
-	<div id="modal1" class="modal grey darken-3" style="max-width: 350px;color: ghostwhite;">
+				<!-- Question 1 -->
+				<div class="question-block">
+					<h6><span class="question-number">01</span> I believe that criminals should receive help rather than
+						punishment.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q1">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 2 -->
+				<div class="question-block">
+					<h6><span class="question-number">02</span> I enjoy wild flights of fantasy.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q2">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 3 -->
+				<div class="question-block">
+					<h6><span class="question-number">03</span> I can't make up my mind.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q3">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 4 -->
+				<div class="question-block">
+					<h6><span class="question-number">04</span> I value cooperation over competition.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q4">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 5 -->
+				<div class="question-block">
+					<h6><span class="question-number">05</span> I pay my bills on time.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q5">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 6 -->
+				<div class="question-block">
+					<h6><span class="question-number">06</span> I feel sympathy for those who are worse off than myself.
+					</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q6">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 7 -->
+				<div class="question-block">
+					<h6><span class="question-number">07</span> I talk to a lot of different people at parties.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q7">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 8 -->
+				<div class="question-block">
+					<h6><span class="question-number">08</span> I would never cheat on my taxes.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q8">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 9 -->
+				<div class="question-block">
+					<h6><span class="question-number">09</span> I like to solve complex problems.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q9">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Question 10 -->
+				<div class="question-block">
+					<h6><span class="question-number">10</span> I experience my emotions intensely.</h6>
+					<div class="input-field" style="margin-bottom: 0;">
+						<select id="q10">
+							<option value="" disabled selected>Choose an option</option>
+							<option value="1">1 (Strongly Disagree)</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5 (Strongly Agree)</option>
+						</select>
+					</div>
+				</div>
+
+				<button type="submit" class="btn waves-effect waves-light btn-accent btn-center">
+					Find My Match
+				</button>
+			</form>
+		</section>
+	</main>
+
+	<!-- Match Result Modal -->
+	<div id="modal1" class="modal">
 		<div class="modal-content">
-			<h4 id="modalName"></h4>
-			<img id="modalPic" src="" width="200" height="200"></img>
+			<p
+				style="color: #00bfa5; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.25em;">
+				Best Match Found
+			</p>
+			<h4 id="modalName" style="font-weight: 800; margin-top: 0;"></h4>
+			<img id="modalPic" src="" alt="Matched Friend">
 		</div>
 		<div class="modal-footer">
-			<button id="modalBtn" class="btn waves-effect waves-green btn-flat">Okay</button>
+			<button id="modalBtn" class="btn waves-effect waves-light btn-accent">
+				View All Friends
+			</button>
 		</div>
 	</div>
 
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="assets/js/survey.js" defer></script>	
+	<footer>
+		<div class="container">
+			<p style="margin-bottom: 0.4em;">
+				<a href="/">Home</a> &bull;
+				<a href="/survey">Survey</a> &bull;
+				<a href="/api/friends" target="_blank">API Friends List</a>
+			</p>
+			<p style="margin: 0;">All Rights Reserved. &copy; Copyright 2018 &ndash; 2026</p>
+		</div>
+	</footer>
+
+	<!-- <script src="https://jquery.com"></script> -->
+	<!-- <script src="https://cloudflare.com"></script> -->
+	     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/js/survey.js"></script>
 </body>
+
 </html>

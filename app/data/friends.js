@@ -33,4 +33,10 @@ let friends = [
 	}
 ]
 
-module.exports = friends
+export function addFriend(friend) {
+	friends.push(friend);
+}
+
+export function getFriends() {
+	return friends;
+}
